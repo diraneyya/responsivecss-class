@@ -1,0 +1,62 @@
+/*
+    media query syntax:
+    {{mediatype}} [and/or ({{mediafeature}}: {{mediafeaturevalue}}) ...]
+
+    you can combine multiple queries with commas
+*/
+
+@media only screen {
+  body {
+    background: red;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: black;
+      color: white;
+    }
+  
+    h1:hover {
+      text-decoration: underline;
+    }
+  }
+  
+}
+
+
+@media not (prefers-reduced-motion: reduce) {
+  h1:hover {
+    text-shadow: 1px 1px 2px pink;
+    transition: text-shadow 0.5s linear;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 499px) {
+  blockquote {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  body {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 599px) {
+  blockquote {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  body {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  blockquote {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  body {
+    background: transparent;
+  }
+}
